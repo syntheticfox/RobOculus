@@ -1,25 +1,75 @@
-#include <opencv2/highgui/highgui.hpp>
-#include <opencv2/imgproc/imgproc.hpp>
+#include <OVR_CAPI_0_5_0.h> //possibly just <OVR_CAPI>
+#include <Extras\OVR_Math.h>
+
 #include <iostream>
-using namespace cv;
+#include <conio.h>
+#include <windows.h>
+
+using namespace OVR;
 using namespace std;
 
-int main() {
-	VideoCapture stream1(0);   //0 is the id of video device.0 if you have only one camera.
+ovrHmd hmd; //global variables, should be members of class in future
+ovrFrameTiming frameTiming;
 
-	cout << CV_MAJOR_VERSION << " " << CV_MINOR_VERSION << endl;
+void Init(){//initialize the SDK
+	ovr_Initialize();
 
-	if (!stream1.isOpened()) { //check if video device has been initialised
-		cout << "cannot open camera";
+	hmd = ovrHmd_Create(0);
+
+	if (!hmd)
+		return;
+
+	ovrHmd_ConfigureTracking(hmd, ovrTrackingCap_Orientation |
+		ovrTrackingCap_Position, ovrTrackingCap_Orientation);
+	//ovrHmd_ConfigureTracking(hmd, ovrTrackingCap_Orientation | ovrTrackingCap_Position, 0);
+}
+
+void Clear(){//a "destructor"
+	ovrHmd_Destroy(hmd);
+
+	ovr_Shutdown();
+}
+
+void Output(){
+	// Optional: we can overwrite the previous console to more
+	// easily see changes in values
+	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+	CONSOLE_SCREEN_BUFFER_INFO bufferInfo;
+	GetConsoleScreenBufferInfo(h, &bufferInfo);
+
+
+	frameTiming = ovrHmd_BeginFrameTiming(hmd, 0);
+	while (hmd){
+
+		ovrTrackingState ts = ovrHmd_GetTrackingState(hmd, frameTiming.ScanoutMidpointSeconds);
+
+		if (ts.StatusFlags & (ovrStatus_OrientationTracked | ovrStatus_PositionTracked)) {
+			// The cpp compatibility layer is used to convert ovrPosef to Posef (see OVR_Math.h)
+			Posef pose = ts.HeadPose.ThePose;
+			float yaw, pitch, roll;
+			pose.Rotation.GetEulerAngles<Axis_Y, Axis_X, Axis_Z>(&yaw, &pitch, &roll);
+
+			// Optional: move cursor back to starting position and print values
+			SetConsoleCursorPosition(h, bufferInfo.dwCursorPosition);
+			cout << "yaw: " << RadToDegree(yaw) << endl;
+			cout << "pitch: " << RadToDegree(pitch) << endl;
+			cout << "roll: " << RadToDegree(roll) << endl;
+
+			Sleep(50);
+
+
+
+			if (_kbhit()) exit(0);
+		}
 	}
+	ovrHmd_EndFrameTiming(hmd);
 
-	//unconditional loop
-	while (true) {
-		Mat cameraFrame;
-		stream1.read(cameraFrame);
-		imshow("cam", cameraFrame);
-		if (waitKey(30) >= 0)
-			break;
-	}
+}
+
+int main(){
+	Init();
+	Output();
+	Clear();
+
 	return 0;
 }
