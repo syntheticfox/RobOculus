@@ -21,7 +21,6 @@ void Init(){//initialize the SDK
 
 	ovrHmd_ConfigureTracking(hmd, ovrTrackingCap_Orientation |
 		ovrTrackingCap_Position, ovrTrackingCap_Orientation);
-	//ovrHmd_ConfigureTracking(hmd, ovrTrackingCap_Orientation | ovrTrackingCap_Position, 0);
 }
 
 void Clear(){//a "destructor"
