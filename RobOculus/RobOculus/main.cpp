@@ -7,6 +7,8 @@ using namespace std;
 int main() {
 	VideoCapture stream1(0);   //0 is the id of video device.0 if you have only one camera.
 
+	cout << CV_MAJOR_VERSION << " " << CV_MINOR_VERSION << endl;
+
 	if (!stream1.isOpened()) { //check if video device has been initialised
 		cout << "cannot open camera";
 	}
