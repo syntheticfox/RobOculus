@@ -12,3 +12,5 @@ glfw (openGL) 3.1.1
 glm (openGL) 0.9.6.3
 
 *if OpenCV states it is missing a dll, download and install [OpenCV 2.4](http://sourceforge.net/projects/opencvlibrary/files/latest/download?source=files). Make sure to select the option to add openCV to your system path during installation.
+
+*you must have the [Oculus Runtime](https://developer.oculus.com/downloads/) downloaded and installed.
