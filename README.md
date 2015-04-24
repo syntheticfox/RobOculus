@@ -3,7 +3,7 @@ Real world Oculus Rift implementation. Project created using Visual Studio 2013 
 
 OculusSDK (Oculus Rift) 0.5.0.1
 
-OpenCV (webcams) 2.4
+OpenCV (webcams) 2.4.11
 
 glew (openGL) 1.12.0
 
