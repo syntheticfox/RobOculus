@@ -78,7 +78,7 @@ void XboxController::updateTimer(){
 			else timer = 0;
 			mtx.unlock();
 		}
-		//if (!robot->stopped)robot->printVals();
+		if (!robot->stopped)robot->printVals();
 		Sleep(20);
 	}
 
