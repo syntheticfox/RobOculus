@@ -11,4 +11,4 @@ glfw (openGL) 3.1.1
 
 glm (openGL) 0.9.6.3
 
-*if OpenCV states it is missing a dll, download and install [OpenCV 2.4](http://sourceforge.net/projects/opencvlibrary/files/latest/download?source=files). Make sure to select the option to add openCV to your system path during installation.
+*if OpenCV states it is missing a dll, download and install [OpenCV 2.4](http://sourceforge.net/projects/opencvlibrary/files/latest/download?source=files).Then you must add an environment variable to your system for OpenCV. Here is a [basic tutorial](http://opencv-srf.blogspot.com/2013/05/installing-configuring-opencv-with-vs.html), you only need to look at the first section  of the tutorial.
