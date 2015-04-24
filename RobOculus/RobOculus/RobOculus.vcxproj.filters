@@ -24,6 +24,9 @@
     <ClCompile Include="3rd party\Serial\Serial.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GameController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Shared.h">

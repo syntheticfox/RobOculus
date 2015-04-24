@@ -60,7 +60,7 @@ void OculusRift::trackHMD(){
 			else if (degree > 180)degree = 180;
 
 			cstr[0] = (char)(degree / 2);
-			cout << "\rDegree: " << degree << endl;
+			//cout << "\rDegree: " << degree << endl;
 			//SP->WriteData(cstr, 1);
 
 			//}

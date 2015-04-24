@@ -1,11 +1,14 @@
 #include <SerialClass.h>
 
+//GameController
+#include <Xinput.h>
+
 //Servos
 #include <OVR_CAPI_0_5_0.h>
 
 class OculusRift{
 private:
-	ovrHmd hmd; //global variables, should be members of class in future
+	ovrHmd hmd; 
 	ovrFrameTiming frameTiming;
 
 	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -17,4 +20,17 @@ public:
 	int degree;
 	OculusRift();
 	~OculusRift();
+};
+
+class XboxController{
+private:
+	XINPUT_STATE state;
+	DWORD controllerChange;
+public:
+	XboxController();
+	~XboxController(){}
+	bool isConnected();
+	void updateTimer();
+	void getState();
+	void getLS();
 };
