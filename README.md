@@ -1,8 +1,7 @@
 # RobOculus
 Real world Oculus Rift implementation. Project created using Visual Studio 2013 on Windows 8/7. Should work with VS12. 
 
-OculusSDK (Oculus Rift) 0.5.0.1
-
+OculusSDK (Oculus Rift) 0.5.0.1 <br />
 OpenCV (webcams) 2.4.11 <br />
 glew (openGL) 1.12.0 <br />
 glfw (openGL) 3.1.1 <br />
