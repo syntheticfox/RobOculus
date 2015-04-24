@@ -53,7 +53,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(ProjectDir)\3rd party\opengl_wrappers\glew\include;$(ProjectDir)\3rd party\opengl_wrappers\glfw\include;$(ProjectDir)\3rd party\opengl_wrappers\glm;$(ProjectDir)\3rd party\OpenCV\build\include;$(ProjectDir)\3rd party\OculusSDK\LibOVR\Include;$(ProjectDir)\3rd party\OculusSDK\LibOVR\Src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)\3rd party\opengl_wrappers\glew\include;$(ProjectDir)\3rd party\opengl_wrappers\glfw\include;$(ProjectDir)\3rd party\opengl_wrappers\glm;$(ProjectDir)\3rd party\OpenCV\build\include;$(ProjectDir)\3rd party\OculusSDK\LibOVR\Include;$(ProjectDir)\3rd party\OculusSDK\LibOVR\Src;$(ProjectDir)\3rd party\Serial;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -72,7 +72,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(ProjectDir)\3rd party\opengl_wrappers\glew\include;$(ProjectDir)\3rd party\opengl_wrappers\glfw\include;$(ProjectDir)\3rd party\opengl_wrappers\glm;$(ProjectDir)\3rd party\OpenCV\build\include;$(ProjectDir)\3rd party\OculusSDK\LibOVR\Include;$(ProjectDir)\3rd party\OculusSDK\LibOVR\Src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)\3rd party\opengl_wrappers\glew\include;$(ProjectDir)\3rd party\opengl_wrappers\glfw\include;$(ProjectDir)\3rd party\opengl_wrappers\glm;$(ProjectDir)\3rd party\OpenCV\build\include;$(ProjectDir)\3rd party\OculusSDK\LibOVR\Include;$(ProjectDir)\3rd party\OculusSDK\LibOVR\Src;$(ProjectDir)\3rd party\Serial;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -84,7 +84,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="3rd party\Serial\Serial.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Servos.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="3rd party\Serial\SerialClass.h" />
+    <ClInclude Include="Shared.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
