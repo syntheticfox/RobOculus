@@ -4,7 +4,6 @@
 #include <windows.h>
 #include <Extras\OVR_Math.h>
 #include <conio.h>
-#include <chrono>
 
 using namespace std;
 using namespace OVR;
@@ -73,7 +72,7 @@ void OculusRift::trackHMD(){
 
 				//cout << state.Temperature << endl;
 
-				cout << pitch << endl;				
+				cout << yaw << endl;				
 			}
 			if (_kbhit()) exit(0);
 		}
