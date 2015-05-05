@@ -6,7 +6,7 @@
 //Servos
 #include <OVR_CAPI_0_5_0.h>
 
-#define ROBOT_COM "COM5"
+#define SERVO_COM "COM6"
 
 class OculusRift{
 private:
@@ -14,7 +14,7 @@ private:
 	ovrFrameTiming frameTiming;
 
 	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
-	Serial* SP = new Serial(ROBOT_COM);
+	Serial* SP = new Serial(SERVO_COM);
 	CONSOLE_SCREEN_BUFFER_INFO bufferInfo;
 
 public:

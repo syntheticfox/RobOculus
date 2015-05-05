@@ -7,6 +7,7 @@
 
 #include "Shared.h"
 using namespace std;
+#define ROBOT_COM "COM5"
 
 #define MAX_POWER 127
 mutex mtx;
@@ -20,7 +21,7 @@ private:
 
 
 public:
-	MobilePlatform(){ topLeft_power = 0; botLeft_power = 0; topRight_power = 0; botRight_power = 0; forward = true; twist = 0; sp = new Serial("COM4"); serialData = new char[4]; timer = 0; stopped = false; }//COM5 for christian, COM4 for chris
+	MobilePlatform(){ topLeft_power = 0; botLeft_power = 0; topRight_power = 0; botRight_power = 0; forward = true; twist = 0; sp = new Serial(ROBOT_COM); serialData = new char[4]; timer = 0; stopped = false; }//COM5 for christian, COM4 for chris
 	~MobilePlatform(){
 		topLeft_power = 0; botLeft_power = 0; topRight_power = 0; botRight_power = 0;
 		sendData();

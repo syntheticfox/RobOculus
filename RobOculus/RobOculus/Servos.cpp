@@ -92,7 +92,7 @@ void OculusRift::trackHMD(){//eventually can move up yaw and pitch to remove las
 				//SP->~Serial();
 				delete SP;
 				SP = new Serial(SERVO_COM);
-				Sleep(2500); //will try to connect every 2.5seconds
+				Sleep(60*1000); //will try to connect every 2.5seconds
 			}
 
 			if (_kbhit()) {
