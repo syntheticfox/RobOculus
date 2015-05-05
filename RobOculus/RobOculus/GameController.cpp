@@ -91,7 +91,7 @@ XboxController::XboxController(){
 
 }
 
-void XboxController::getState(){
+void XboxController::getState(OculusRift *ovr){
 	while (1){
 		XInputGetState(0, &state); //get state of the first controller from XInput
 
@@ -111,7 +111,7 @@ void XboxController::getState(){
 			robot->sendData();
 
 		}
-		//else if (state.Gamepad.wButtons == XINPUT_GAMEPAD_Y) 
+		else if (state.Gamepad.wButtons == XINPUT_GAMEPAD_Y) ovr->resetHMD();
 		else if (controllerChange + 1 < state.dwPacketNumber){
 			if (robot->stopped)robot->stopped = false;
 			getLS();

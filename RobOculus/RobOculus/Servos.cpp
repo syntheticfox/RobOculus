@@ -39,8 +39,8 @@ OculusRift::~OculusRift(){//a "destructor"
 	ovr_Shutdown();
 }
 
-void resetHMD(){
-	//ovrHmd_RecenterPose(hmd); //recenter/reset origin
+void OculusRift::resetHMD(){
+	ovrHmd_RecenterPose(hmd); //recenter/reset origin
 }
 
 

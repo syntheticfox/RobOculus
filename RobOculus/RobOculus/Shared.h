@@ -17,6 +17,7 @@ private:
 
 public:
 	void trackHMD();
+	void resetHMD();
 	int degree;
 	OculusRift();
 	~OculusRift();
@@ -31,7 +32,7 @@ public:
 	~XboxController(){}
 	bool isConnected();
 	void updateTimer();
-	void getState();
+	void getState(OculusRift *ovr);
 	void getLS();
 };
 void resetHMD();
