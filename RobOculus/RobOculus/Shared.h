@@ -6,7 +6,8 @@
 //Servos
 #include <OVR_CAPI_0_5_0.h>
 
-#define SERVO_COM "COM6"
+#define SERVO_COM "COM6" //serial port for servos movement (to arduino)
+#define ROBOT_COM "COM5" //serial port for robot movement (to arduino)
 
 class OculusRift{
 private:

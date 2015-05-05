@@ -7,9 +7,9 @@
 
 #include "Shared.h"
 using namespace std;
-#define ROBOT_COM "COM5"
 
-#define MAX_POWER 127
+
+#define MAX_POWER 255
 mutex mtx;
 atomic<int> timer;
 class MobilePlatform{

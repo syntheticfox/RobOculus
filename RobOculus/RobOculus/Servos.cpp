@@ -8,7 +8,7 @@
 using namespace std;
 using namespace OVR;
 
-#define SERVO_COM "COM6" //serial port for servos arduino
+
 
 OculusRift::OculusRift(){//initialize the SDK
 	ovr_Initialize();
