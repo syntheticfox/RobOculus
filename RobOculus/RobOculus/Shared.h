@@ -34,3 +34,4 @@ public:
 	void getState();
 	void getLS();
 };
+void resetHMD();

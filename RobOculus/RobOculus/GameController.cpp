@@ -111,6 +111,7 @@ void XboxController::getState(){
 			robot->sendData();
 
 		}
+		//else if (state.Gamepad.wButtons == XINPUT_GAMEPAD_Y) 
 		else if (controllerChange + 1 < state.dwPacketNumber){
 			if (robot->stopped)robot->stopped = false;
 			getLS();

@@ -2,6 +2,7 @@
 #include <iostream>
 #include <thread>
 
+
 int main(){
 	OculusRift *ovr = new OculusRift;
 	XboxController *xbox = new XboxController;
