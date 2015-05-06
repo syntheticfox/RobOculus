@@ -9,7 +9,7 @@
 using namespace std;
 
 
-#define MAX_POWER 255
+#define MAX_POWER 127
 mutex mtx;
 atomic<int> timer;
 class MobilePlatform{
@@ -29,10 +29,10 @@ public:
 	Serial *sp;
 
 	bool stopped;
-	void setTL_power(int power){ topLeft_power = power; }
-	void setTR_power(int power){ topRight_power = power; }
-	void setBL_power(int power){ botLeft_power = power; }
-	void setBR_power(int power){ botRight_power = power; }
+	void setTL_power(int power){ if (power < 0)topLeft_power = 0; else topLeft_power = power; }
+	void setTR_power(int power){ if (power < 0)topRight_power = 0; else topRight_power = power; }
+	void setBL_power(int power){ if (power < 0)botLeft_power = 0; else botLeft_power = power; }
+	void setBR_power(int power){ if (power < 0)botRight_power = 0; else botRight_power = power; }
 	void setDirection(bool dir){ forward = dir; }
 	bool getDirection(){ return forward; }
 	void printVals(){
@@ -149,37 +149,49 @@ void XboxController::getLS(){
 
 	if (state.Gamepad.wButtons == XINPUT_GAMEPAD_A) {//working on here
 		robot->setDirection(true);//forward
-		robot->setBL_power(speed);
-		robot->setBR_power(speed);
+		//robot->setBL_power(speed);
+		//robot->setBR_power(speed);
 
 		if (normalizedLX < 0){//move to left
 			robot->setTL_power(speed + normalizedLX * speed);//RT*normalizedLX);
+			robot->setBL_power(speed + normalizedLX * speed);
 			robot->setTR_power(speed - normalizedLX * speed);
+			robot->setBR_power(speed - normalizedLX * speed);
 		}
 		else if (normalizedLX > 0){//move to right
 			robot->setTL_power(speed + normalizedLX * speed);
+			robot->setBL_power(speed + normalizedLX * speed);
 			robot->setTR_power(speed - normalizedLX * speed);
+			robot->setBR_power(speed - normalizedLX * speed);
 		}
 		else {//move forward
 			robot->setTL_power(speed);
+			robot->setBL_power(speed);
 			robot->setTR_power(speed);
+			robot->setBR_power(speed);
 		}
 	}
 	else if (state.Gamepad.wButtons == XINPUT_GAMEPAD_B){
 		robot->setDirection(false);//backwards
-		robot->setTL_power(speed);
-		robot->setTR_power(speed);
+		//robot->setTL_power(speed);
+		//robot->setTR_power(speed);
 
 		if (normalizedLX < 0){//move to left
 			robot->setBL_power(speed + normalizedLX * speed);
-			robot->setBR_power(speed);
+			robot->setTL_power(speed + normalizedLX * speed);
+			robot->setBR_power(speed - normalizedLX * speed);
+			robot->setTR_power(speed - normalizedLX * speed);
 		}
 		else if (normalizedLX > 0){//move to right
-			robot->setBL_power(speed);
+			robot->setBL_power(speed + normalizedLX * speed);
+			robot->setTL_power(speed + normalizedLX * speed);
 			robot->setBR_power(speed - normalizedLX * speed);
+			robot->setTR_power(speed - normalizedLX * speed);
 		}
 		else {//move backwards
+			robot->setTL_power(speed);
 			robot->setBL_power(speed);
+			robot->setTR_power(speed);
 			robot->setBR_power(speed);
 		}
 	}
