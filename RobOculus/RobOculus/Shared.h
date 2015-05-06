@@ -14,8 +14,8 @@ private:
 	ovrHmd hmd; 
 	ovrFrameTiming frameTiming;
 
-	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
-	Serial* SP = new Serial(SERVO_COM);
+	HANDLE h;
+	Serial* SP;
 	CONSOLE_SCREEN_BUFFER_INFO bufferInfo;
 
 public:
