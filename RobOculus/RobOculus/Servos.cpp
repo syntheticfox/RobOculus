@@ -81,7 +81,7 @@ void OculusRift::trackHMD(){//eventually can move up yaw and pitch to remove las
 
 				if (yaw < 0 && yaw > -90)yaw = 0;
 				else if (yaw < -90)yaw = 180;
-				
+				cout << "yaw: " << yaw << endl;
 				char *cstr = new char[2];
 				cstr[0] = (char)(yaw / 2);
 				cstr[1] = (char)(pitch / 2);
@@ -89,10 +89,11 @@ void OculusRift::trackHMD(){//eventually can move up yaw and pitch to remove las
 			}
 			else{
 				//try to connect. won't reconnect for some reason
-				//SP->~Serial();
-				delete SP;
+				cout << "boo" << endl;
+				SP->~Serial();
+				//delete SP;
 				SP = new Serial(SERVO_COM);
-				Sleep(60*1000); //will try to connect every 2.5seconds
+				Sleep(2000); //will try to connect every 2.5seconds
 			}
 
 			if (_kbhit()) {

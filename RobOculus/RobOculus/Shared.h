@@ -10,8 +10,7 @@
 #define ROBOT_COM "COM5" //serial port for robot movement (to arduino)
 
 class OculusRift{
-private:
-	ovrHmd hmd; 
+private: 
 	ovrFrameTiming frameTiming;
 
 	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -22,6 +21,7 @@ public:
 	void trackHMD();
 	void resetHMD();
 	int degree;
+	ovrHmd hmd;
 	OculusRift();
 	~OculusRift();
 };
