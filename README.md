@@ -8,7 +8,7 @@ glfw (openGL) 3.1.1 <br />
 
 
 #Before you run the code...
-Files containing a description and details of the project is located in the [Documents](https://github.com/ChrisTheEngineer/RobOculus/tree/wheels/Documents) section.
+Files containing a description and details of the project are located in the [Documents](https://github.com/ChrisTheEngineer/RobOculus/tree/wheels/Documents) section.
 
 *Download and install [OpenCV 2.4.11](http://sourceforge.net/projects/opencvlibrary/files/latest/download?source=files).Then add an environment variable to your system for OpenCV. Here is a [basic tutorial](http://opencv-srf.blogspot.com/2013/05/installing-configuring-opencv-with-vs.html), you only need to look at the "Steps to Set up Environmental Variable" section of the tutorial.
 
