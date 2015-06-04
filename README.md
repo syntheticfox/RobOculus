@@ -18,12 +18,12 @@ Files containing a description and details of the project are located in the [Do
 
 **Robot:**
 
-<img src="/Documents/Robot.png?raw=true" alt="Robot">
+<img src="/Documents/Images/Robot.png?raw=true" alt="Robot">
 
 **Oculus Rift:**
 
-<img src="/Documents/Oculus.jpg?raw=true" alt="Oculus Rift">
+<img src="/Documents/Images/Oculus.jpg?raw=true" alt="Oculus Rift">
 
 **The Team:**
 
-<img src="/Documents/The Team.jpg?raw=true" alt="The Team">
+<img src="/Documents/Images/The Team.jpg?raw=true" alt="The Team">
