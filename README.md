@@ -15,3 +15,15 @@ Files containing a description and details of the project are located in the [Do
 (Optional) Set your environment variable name to be "%OPENCV_DIR%" without the quotations to sync with our OpenCV folder shortcut and the Visual Studio properties file. 
 
 *To interface with the Arduino board, install the [Arduino USB Driver](http://www.arduino.cc/en/Main/Software). The code files for the Arduino microcontrollers are located in the [Arduino](https://github.com/ChrisTheEngineer/RobOculus/tree/wheels/Arduino) section.
+
+**Robot:**
+
+<img src="/Documents/Robot.png?raw=true" alt="Robot">
+
+**Oculus Rift:**
+
+<img src="/Documents/Oculus.jpg?raw=true" alt="Oculus Rift">
+
+**The Team:**
+
+<img src="/Documents/The Team.jpg?raw=true" alt="The Team">
